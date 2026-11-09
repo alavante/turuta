@@ -1,0 +1,21 @@
+{
+  "name": "TURUTA · Música Militar",
+  "short_name": "Música",
+  "description": "Toques de Uso Reglamentario en las Unidades - Música Militar",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#10170f",
+  "theme_color": "#10170f",
+  "icons": [
+    {
+      "src": "https://alavante.github.io/musica_militar/img/banderaespana.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://alavante.github.io/musica_militar/img/banderaespana.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
