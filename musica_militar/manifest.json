@@ -8,12 +8,12 @@
   "theme_color": "#10170f",
   "icons": [
     {
-      "src": "https://alavante.github.io/musica_militar/img/banderaespana.jpg",
+      "src": "https://alavante.github.io/turuta/badge_musica.png",
       "sizes": "192x192",
       "type": "image/jpeg"
     },
     {
-      "src": "https://alavante.github.io/musica_militar/img/banderaespana.jpg",
+      "src": "https://alavante.github.io/turuta/badge_musica.png",
       "sizes": "512x512",
       "type": "image/jpeg"
     }
