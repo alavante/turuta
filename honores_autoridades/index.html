@@ -11,8 +11,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Honores">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="https://alavante.github.io/honores_autoridades/img/banderaespana.jpg">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
     body { background: #10170f; color: #e8e4d0; min-height: 100vh; display: flex; flex-direction: column; }
@@ -153,23 +151,6 @@
 </head>
 <body>
 
-  <script>
-    // Forzar purga de caché vieja en móviles
-    const APP_VERSION = 'v1792948779';
-    if (localStorage.getItem('app_ver') !== APP_VERSION) {
-      localStorage.setItem('app_ver', APP_VERSION);
-      if ('caches' in window) {
-        caches.keys().then(names => {
-          for (let name of names) caches.delete(name);
-        });
-      }
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(regs => {
-          for (let reg of regs) reg.unregister();
-        });
-      }
-    }
-  </script>
 
 
   <!-- Reproductores estáticos precargados para Ceremonial de Autoridades -->
@@ -225,10 +206,9 @@
 
   <header style="justify-content:center; text-align:center;">
     <div class="brand" style="justify-content:center;">
-      <img src="https://alavante.github.io/honores_autoridades/img/banderaespana.jpg" alt="🇪🇸" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 3 2\'%3E%3Crect width=\'3\' height=\'2\' fill=\'%23c60b1e\'/%3E%3Crect width=\'3\' height=\'1\' y=\'0.5\' fill=\'%23ffc400\'/%3E%3C/svg%3E';" style="width:40px; height:28px; border-radius:4px; object-fit:cover;" />
+      <img src="https://alavante.github.io/turuta/badge_honores.png" alt="Badge" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: none; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.4);">
       <div>
         <div class="brand-title">Honores a Autoridades</div>
-        <div class="brand-sub">PWA Web App</div>
       </div>
     </div>
       <a href="https://alavante.github.io/turuta/" style="display:inline-flex; align-items:center; gap:5px; background:#33402a; border:1px solid #c9a227; color:#d6c58a; padding:5px 10px; border-radius:6px; font-size:13px; font-weight:800; text-decoration:none; margin-left:auto;">⚓ TURUTA</a>
@@ -239,10 +219,6 @@
   
 
   <main>
-    <div class="install-banner" id="pwaBanner">
-      <span>📱 <b>Instalar en iPhone/Android:</b> Añadir a pantalla de inicio para usar 100% offline en la mar.</span>
-      <span style="cursor:pointer; font-weight:900;" onclick="document.getElementById('pwaBanner').style.display='none'">✕</span>
-    </div>
 
     <div class="view-section active" id="viewAuth">
       <div class="card">
@@ -389,11 +365,11 @@
     </div>
   </main>
 
-  <footer style="text-align:center; padding:18px 12px; font-size:11px; color:#6b7557; line-height:1.8;">
-    <div>Honores de Ordenanza · Ceremonial Militar</div>
-    <div style="margin-top:6px; color:#8f9a7e; font-weight:600;">© TDF 2026</div>
-  <div style="text-align:center; font-size:10px; color:#5c6849; margin:10px 0;">Versión v1792948779</div>
-</footer>
+  <footer style="background: transparent; border-top: none; text-align: center; margin-top: 20px; padding: 12px; color: #6b7557; font-family: monospace; font-size: 11px; font-weight: normal;">
+      <div style="font-weight: 700; color: #8f9a7e; margin-bottom: 2px;">@TDF 2026</div>
+      <div style="font-size: 12px; font-weight: 600; color: #8f9a7e; margin: 4px 0;">alavante.usuarios@gmail.com</div>
+      <div style="color: #d6c58a; font-weight: 600;">v4.3.0012</div>
+    </footer>
 
   <script>
     // Audio Player Controller
@@ -1079,6 +1055,7 @@
     renderAuthListHAU();
 
   </script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(){});});}</script>
 </body>
 </html
 
