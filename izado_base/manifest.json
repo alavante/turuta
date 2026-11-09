@@ -8,12 +8,12 @@
   "theme_color": "#10170f",
   "icons": [
     {
-      "src": "../img/banderaespana.jpg",
+      "src": "https://alavante.github.io/turuta/badge_izado.png",
       "sizes": "192x192",
       "type": "image/jpeg"
     },
     {
-      "src": "../img/banderaespana.jpg",
+      "src": "https://alavante.github.io/turuta/badge_izado.png",
       "sizes": "512x512",
       "type": "image/jpeg"
     }
