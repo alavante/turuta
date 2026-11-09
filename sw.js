@@ -1,5 +1,5 @@
 // Service Worker TURUTA
-const CACHE_NAME = 'turuta-v1';
+const CACHE_NAME = 'turuta-v2';
 const ASSETS = [
   "./",
   "./index.html",
