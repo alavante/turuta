@@ -1,0 +1,30 @@
+{
+  "name": "TURUTA · Toques de Uso Reglamentario en las Unidades",
+  "short_name": "TURUTA",
+  "description": "Toques, himnos y ceremonial para las unidades de los ejércitos de Tierra, Aire y del Espacio y la Armada",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#10170f",
+  "theme_color": "#10170f",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

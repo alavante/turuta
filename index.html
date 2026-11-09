@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#10170f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="TURUTA">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <title>TURUTA · Toques de Uso Reglamentario en las Unidades de los ejércitos</title>
+  <style>
+    @font-face { font-family:'BlackOps'; src:url('BlackOpsOne.woff2') format('woff2'); font-display:swap; }
+    @font-face { font-family:'OS'; font-weight:400; src:url('OpenSans-400.woff2') format('woff2'); font-display:swap; }
+    @font-face { font-family:'OS'; font-weight:700; src:url('OpenSans-700.woff2') format('woff2'); font-display:swap; }
+    * { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+    body { background:#10170f; color:#e8e4d0; min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:16px; font-family:'OS',-apple-system,'Segoe UI',Roboto,Arial,sans-serif; }
+    .container { width:100%; max-width:520px; display:flex; flex-direction:column; gap:14px; }
+    .header-card { background:linear-gradient(180deg,#1c2617 0%,#141c10 100%); border:1.5px solid #3a4a2c; border-radius:14px; padding:18px 14px 16px; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,.45); position:relative; overflow:hidden; }
+    .header-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:#c9a227; }
+    .titulo-fila { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:4px; }
+    .titulo-fila img { width:76px; height:76px; border-radius:16px; box-shadow:0 3px 12px rgba(0,0,0,.55); }
+    .titulo-principal { font-family:'BlackOps',Impact,sans-serif; font-weight:400; font-size:50px; line-height:1; letter-spacing:2px; color:#d6c58a; }
+    .subtitulo { margin-top:12px; font-family:'BlackOps',Impact,sans-serif; font-size:11.5px; line-height:1.55; letter-spacing:.3px; color:#8f9a7e; }
+    .subtitulo .ini { font-size:17px; color:#c9a227; }
+    .linea { width:96px; height:3px; background:#c9a227; margin:12px auto 0; border-radius:2px; }
+    .modulos-grid { display:flex; flex-direction:column; gap:10px; }
+    .modulo-btn { display:flex; align-items:center; gap:14px; background:#1c2617; border:1.5px solid #3a4a2c; border-left:4px solid #c9a227; border-radius:12px; padding:12px 14px; text-decoration:none; color:inherit; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.3); transition:all .15s; }
+    .modulo-btn:active { transform:scale(.98); background:#26331c; border-color:#d6c58a; }
+    .badge { width:62px; height:62px; flex-shrink:0; display:block; filter:drop-shadow(0 2px 5px rgba(0,0,0,.5)); }
+    .modulo-info { flex:1; min-width:0; }
+    .modulo-title { font-family:'BlackOps',Impact,sans-serif; font-size:15px; letter-spacing:.3px; color:#e8e4d0; }
+    .modulo-desc { font-size:11.5px; color:#8f9a7e; margin-top:4px; }
+    .modulo-arrow { font-size:18px; color:#c9a227; flex-shrink:0; }
+    footer { text-align:center; margin-top:18px; padding:12px; color:#8f9a7e; font-size:11px; }
+    footer .copy { font-weight:700; margin-bottom:2px; }
+    footer a { color:#d6c58a; text-decoration:none; }
+  </style>
+  <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () { navigator.serviceWorker.register('./sw.js').catch(function () {}); });
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header class="header-card">
+      <div class="titulo-fila">
+        <img src="icon-192.png" alt="TURUTA">
+        <h1 class="titulo-principal">TURUTA</h1>
+      </div>
+      <div class="subtitulo"><span class="ini">T</span>oques de <span class="ini">U</span>so <span class="ini">R</span>eglamentario en las <span class="ini">U</span>nidades<br>de los ejércitos de <span class="ini">T</span>ierra, del <span class="ini">A</span>ire y del Espacio y la Armada</div>
+      <div class="linea"></div>
+    </header>
+    <main class="modulos-grid">
+      <a href="https://alavante.github.io/musica_militar/" class="modulo-btn">
+        <img class="badge" src="badge_musica.png" alt="">
+        <div class="modulo-info"><div class="modulo-title">Banda de Música y Corneta</div><div class="modulo-desc">Himnos, marchas, toques y letras</div></div>
+        <div class="modulo-arrow">&#10148;</div>
+      </a>
+      <a href="https://alavante.github.io/izado_base/" class="modulo-btn">
+        <img class="badge" src="badge_izado.png" alt="">
+        <div class="modulo-info"><div class="modulo-title">Izado y Arriado en Bases</div><div class="modulo-desc">Ceremonial en bases y acuartelamientos</div></div>
+        <div class="modulo-arrow">&#10148;</div>
+      </a>
+      <a href="https://alavante.github.io/honores_autoridades/" class="modulo-btn">
+        <img class="badge" src="badge_honores.png" alt="">
+        <div class="modulo-info"><div class="modulo-title">Honores a Autoridades</div><div class="modulo-desc">Protocolo, voces, salvas e himnos</div></div>
+        <div class="modulo-arrow">&#10148;</div>
+      </a>
+    </main>
+    <footer>
+      <div class="copy">@TDF 2026</div>
+      <div>Escríbanos a alavante.usuarios@gmail.com</div>
+      <div style="margin-top:4px;"><a href="privacidad.html">Política de privacidad</a></div>
+      <div style="color:#c9a227; font-weight:700; margin-top:4px;">v1.0.0 · TURUTA</div>
+    </footer>
+  </div>
+</body>
+</html>
