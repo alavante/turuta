@@ -1,0 +1,21 @@
+{
+  "name": "TURUTA · Izado y Arriado en Bases",
+  "short_name": "Izado",
+  "description": "Toques de Uso Reglamentario en las Unidades - Izado y Arriado en Bases",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#10170f",
+  "theme_color": "#10170f",
+  "icons": [
+    {
+      "src": "../img/banderaespana.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "../img/banderaespana.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
