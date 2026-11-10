@@ -21,8 +21,10 @@
     .titulo-fila { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:4px; }
     .titulo-fila img { width:76px; height:76px; border-radius:16px; box-shadow:0 3px 12px rgba(0,0,0,.55); }
     .titulo-principal { font-family:'BlackOps',Impact,sans-serif; font-weight:400; font-size:50px; line-height:1; letter-spacing:2px; color:#d6c58a; }
-    .subtitulo { margin-top:12px; font-family:'BlackOps',Impact,sans-serif; font-size:clamp(8.5px, 2.7vw, 11px); line-height:1.45; letter-spacing:.2px; color:#8f9a7e; }
-    .subtitulo .ini { font-size:1.35em; color:#c9a227; }
+    .subtitulo { margin-top:12px; font-family:'BlackOps',Impact,sans-serif; font-size:clamp(7px, 2.1vw, 9.5px); line-height:1.4; letter-spacing:.1px; color:#8f9a7e; }
+    .subtitulo .sub-line { display:block; white-space:nowrap; }
+    .subtitulo .sub-line { display:block; white-space:nowrap; }
+    .subtitulo .ini { font-size:1.2em; color:#c9a227; }
     .linea { width:96px; height:3px; background:#c9a227; margin:12px auto 0; border-radius:2px; }
     .modulos-grid { display:flex; flex-direction:column; gap:10px; }
     .modulo-btn { display:flex; align-items:center; gap:14px; background:#1c2617; border:1.5px solid #3a4a2c; border-left:4px solid #c9a227; border-radius:12px; padding:12px 14px; text-decoration:none; color:inherit; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.3); transition:all .15s; }
@@ -64,7 +66,11 @@
         <img src="icon-192.png" alt="TURUTA">
         <h1 class="titulo-principal">TURUTA</h1>
       </div>
-      <div class="subtitulo"><span class="ini">T</span>oques de <span class="ini">U</span>so <span class="ini">R</span>eglamentario en las <span class="ini">U</span>nidades<br>de los ejércitos de <span class="ini">T</span>ierra, del <span class="ini">A</span>ire<br>y del Espacio y la Armada</div>
+      <div class="subtitulo">
+        <span class="sub-line"><span class="ini">T</span>oques de <span class="ini">U</span>so <span class="ini">R</span>eglamentario en las <span class="ini">U</span>nidades</span>
+        <span class="sub-line">en los ejércitos de <span class="ini">T</span>ierra, del <span class="ini">A</span>ire</span>
+        <span class="sub-line">y del Espacio y de la Armada</span>
+      </div>
       <div class="linea"></div>
     </header>
     <main class="modulos-grid">
