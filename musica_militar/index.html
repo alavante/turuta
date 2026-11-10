@@ -184,12 +184,12 @@
   <!-- CANAL DUAL DE REPRODUCCIÓN (BANDA Y CORNETA INDEPENDIENTES) -->
   <div class="dual-status-container">
     <div id="statusBandaMMT" class="status-bar-channel status-bar-banda">
-      <div id="statusBandaTextMMT" class="status-channel-text">🎺 Banda: Sonando...</div>
-      <button type="button" class="status-stop-btn" onclick="stopBandaMMT()">🛑 PARAR BANDA</button>
+      <div id="statusBandaTextMMT" class="status-channel-text">Banda: Sonando...</div>
+      <button type="button" class="status-stop-btn" onclick="stopBandaMMT()">PARAR BANDA</button>
     </div>
     <div id="statusCornetaMMT" class="status-bar-channel status-bar-corneta">
-      <div id="statusCornetaTextMMT" class="status-channel-text">📯 Corneta: Orden activa...</div>
-      <button type="button" class="status-stop-btn" onclick="stopCornetaMMT()">🛑 PARAR CORNETA</button>
+      <div id="statusCornetaTextMMT" class="status-channel-text">Corneta: Orden activa...</div>
+      <button type="button" class="status-stop-btn" onclick="stopCornetaMMT()">PARAR CORNETA</button>
     </div>
   </div>
 
@@ -197,16 +197,16 @@
     <!-- BLOQUE 1: BANDA DE MÚSICA -->
     <div class="card card-block-1">
       <div class="card-title">
-        <span>🎺 BANDA DE MÚSICA</span>
+        <span>BANDA DE MÚSICA</span>
         </div>
 
       <!-- Desplegable 1: Himnos Institucionales y Países -->
       <div class="field-group">
-        <label class="field-label" for="selCatInstitucionales">🌍 1. Himnos de España y Países (155)</label>
+        <label class="field-label" for="selCatInstitucionales">1. Himnos de España y Países (155)</label>
         <select id="selCatInstitucionales" class="custom-select" onchange="onMusicaSelectChange(this, 'institucionales')">
             <option value="">-- Seleccione Himno (España / Países Extranjeros) --</option>
-            <option value="mm_espaniacorto">🇪🇸 España (corto)</option>
-            <option value="mm_espanialargo">🇪🇸 España (largo)</option>
+            <option value="mm_espaniacorto">España (corto)</option>
+            <option value="mm_espanialargo">España (largo)</option>
             <option value="ant_afghanistan">Afghanistan</option>
             <option value="ant_albania">Albania</option>
             <option value="ant_alemania">Alemania (Das Lied der Deutschen)</option>
@@ -367,7 +367,7 @@
 
       <!-- Desplegable 2: Marchas Militares -->
       <div class="field-group">
-        <label class="field-label" for="selCatMarchas">🥁 2. Marchas Militares (22)</label>
+        <label class="field-label" for="selCatMarchas">2. Marchas Militares (22)</label>
         <select id="selCatMarchas" class="custom-select" onchange="onMusicaSelectChange(this, 'marchas')">
             <option value="">-- Seleccione Marcha Militar --</option>
             <option value="mm_bajoladobleaguila">Bajo La Doble Aguila</option>
@@ -397,7 +397,7 @@
 
       <!-- Desplegable 3: Himnos de Armas y Cuerpos -->
       <div class="field-group">
-        <label class="field-label" for="selCatHimnos">⚔️ 3. Himnos de Armas y Cuerpos (13)</label>
+        <label class="field-label" for="selCatHimnos">3. Himnos de Armas y Cuerpos (13)</label>
         <select id="selCatHimnos" class="custom-select" onchange="onMusicaSelectChange(this, 'himnos')">
             <option value="">-- Seleccione Himno de Arma / Cuerpo --</option>
             <option value="mm_himnoartilleria">Himno de Artillería</option>
@@ -418,7 +418,7 @@
 
       <!-- Desplegable 4: Música Religiosa Militar -->
       <div class="field-group">
-        <label class="field-label" for="selCatReligiosa">✝️ 4. Música Religiosa Militar (4)</label>
+        <label class="field-label" for="selCatReligiosa">4. Música Religiosa Militar (4)</label>
         <select id="selCatReligiosa" class="custom-select" onchange="onMusicaSelectChange(this, 'religiosa')">
             <option value="">-- Seleccione Música Religiosa --</option>
             <option value="mm_lamuertenoeselfinal">La muerte no es el final</option>
@@ -431,13 +431,13 @@
       <!-- BOTONERA COMÚN UNIFICADA -->
       <div class="common-btn-bar">
         <button type="button" id="btnPlayBandaCommon" class="btn-action-main btn-play-banda" onclick="playMusicaSeleccionadaMMT()">
-          <span>▶️</span> <span>PLAY</span>
+          <span>PLAY</span>
         </button>
         <button type="button" id="btnAddBandaCommon" class="btn-action-main btn-add-banda" onclick="addMusicaSeleccionadaAPlaylistMMT()">
-          <span>➕</span> <span>AÑADIR A LISTA</span>
+          <span>AÑADIR A LISTA</span>
         </button>
         <button type="button" id="btnLyricsBandaCommon" class="btn-action-main btn-lyrics-banda" onclick="verLetraMusicaSeleccionadaMMT()">
-          <span>📜</span> <span>VER LETRA</span>
+          <span>VER LETRA</span>
         </button>
       </div>
     </div>
@@ -445,7 +445,7 @@
     <!-- BLOQUE 2: TOQUES DE CORNETA -->
     <div class="card card-block-2">
       <div class="card-title">
-        <span>📯 CORNETA:</span>
+        <span>CORNETA:</span>
         </div>
 
       <div class="field-group">
@@ -483,10 +483,10 @@
       <!-- BOTONES DEBAJO DE LA BARRA DE CORNETA -->
       <div class="corneta-btn-bar">
         <button type="button" class="btn-action-main btn-play-corneta" onclick="playCornetaSeleccionadaMMT()">
-          <span>▶️</span> <span>TOCAR CORNETA</span>
+          <span>TOCAR CORNETA</span>
         </button>
         <button type="button" class="btn-action-main btn-add-corneta" onclick="addCornetaSeleccionadaAPlaylistMMT()">
-          <span>➕</span> <span>AÑADIR A LISTA</span>
+          <span>AÑADIR A LISTA</span>
         </button>
       </div>
     </div>
@@ -494,25 +494,25 @@
     <!-- BLOQUE 3: LISTAS DE REPRODUCCIÓN -->
     <div class="card card-block-3">
       <div class="card-title">
-        <span>📋 Lista de reproducción</span>
+        <span>Lista de reproducción</span>
         </div>
 
       <!-- Desplegable de lista existente -->
       <div class="field-group" style="margin-bottom: 8px;">
         <select id="selPlaylistActiva" class="custom-select" onchange="cambiarPlaylistActivaMMT(this.value)">
-          <option value="lista_ejemplo" selected>🎖️ LISTA EJEMPLO</option>
+          <option value="lista_ejemplo" selected>LISTA EJEMPLO</option>
         </select>
       </div>
 
       <!-- Barra de gestión de lista (Nueva, Guardar cambios, Borrar) -->
       <div class="playlist-mgmt-bar" style="display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 8px; margin-bottom: 12px;">
         <button type="button" class="btn-action-main btn-play-banda" onclick="crearNuevaListaPromptMMT()">
-          <span>➕</span> <span>Nueva Lista</span>
+          <span>Nueva Lista</span>
         </button>
         <button type="button" class="btn-action-main btn-play-banda" onclick="guardarListaActualMMT()">
-          <span>💾</span> <span>Guardar cambios</span>
+          <span>Guardar cambios</span>
         </button>
-        <button type="button" class="btn-action-main btn-danger-action" onclick="borrarListaActualPromptMMT()"><span>🗑️</span> <span>Borrar Lista</span></button>
+        <button type="button" class="btn-action-main btn-danger-action" onclick="borrarListaActualPromptMMT()"><span>Borrar Lista</span></button>
       </div>
 
       <!-- Ventana con las pistas de la lista -->
@@ -522,18 +522,18 @@
 
       <!-- Barra de reordenación y borrado de pista seleccionada -->
       <div class="playlist-reorder-bar">
-        <button type="button" class="btn-reorder" onclick="subirPistaSeleccionadaMMT()">🔼 Subir</button>
-        <button type="button" class="btn-reorder" onclick="bajarPistaSeleccionadaMMT()">🔽 Bajar</button>
-        <button type="button" class="btn-del-item btn-danger-action" onclick="borrarPistaSeleccionadaMMT()">🗑️ Borrar Pista</button>
+        <button type="button" class="btn-reorder" onclick="subirPistaSeleccionadaMMT()">Subir</button>
+        <button type="button" class="btn-reorder" onclick="bajarPistaSeleccionadaMMT()">Bajar</button>
+        <button type="button" class="btn-del-item btn-danger-action" onclick="borrarPistaSeleccionadaMMT()">Borrar Pista</button>
       </div>
 
       <!-- Barra de reproducción -->
       <div class="playlist-exec-bar" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 8px;">
         <button type="button" id="btnPlayPlaylist" class="btn-action-main btn-play-banda" onclick="iniciarPlaylistMMT()">
-          <span>▶️</span> <span>INICIAR</span>
+          <span>INICIAR</span>
         </button>
         <button type="button" class="btn-action-main btn-play-banda" onclick="saltarSiguientePistaPlaylistMMT()">
-          <span>⏭️</span> <span>NEXT</span>
+          <span>NEXT</span>
         </button>
       </div>
     </div>
@@ -556,7 +556,7 @@
   <footer style="background: transparent; border-top: none; text-align: center; margin-top: 20px; padding: 12px; color: #6b7557; font-family: monospace; font-size: 11px; font-weight: normal;">
       <div style="font-weight: 700; color: #8f9a7e; margin-bottom: 2px;">@TDF 2026</div>
       <div style="font-size: 12px; font-weight: 600; color: #8f9a7e; margin: 4px 0;">alavante.usuarios@gmail.com</div>
-      <div style="color: #d6c58a; font-weight: 600;">v4.3.0012</div>
+      <div style="color: #d6c58a; font-weight: 600;">v2.01.10</div>
     </footer>
 
   <!-- CANALES DE AUDIO DUAL TOTALMENTE INDEPENDIENTES -->
@@ -777,7 +777,7 @@
       const statusBox = document.getElementById('statusBandaMMT');
       const statusText = document.getElementById('statusBandaTextMMT');
       if (statusBox) statusBox.style.display = 'flex';
-      if (statusText) statusText.textContent = '🎺 ' + item.nombre;
+      if (statusText) statusText.textContent = item.nombre;
 
       bandaReproduciendo = true;
 
@@ -856,7 +856,7 @@
       const statusBox = document.getElementById('statusCornetaMMT');
       const statusText = document.getElementById('statusCornetaTextMMT');
       if (statusBox) statusBox.style.display = 'flex';
-      if (statusText) statusText.textContent = '📯 ' + item.nombre;
+      if (statusText) statusText.textContent = item.nombre;
 
       const ctx = getAudioContext();
       if (ctx) {
@@ -955,7 +955,7 @@
         if (playlistEnCurso && idx === playlistIndexActual) classes += ' active-playing';
         row.className = classes;
 
-        const icono = (it.tipo === 'corneta') ? '📯' : '🎺';
+        const icono = '';
         row.innerHTML = `
           <span>${idx + 1}. ${icono} ${it.nombre}</span>
           <span style="font-size:10px; opacity:0.6; text-transform:uppercase;">${it.tipo}</span>
@@ -1060,7 +1060,7 @@
       Object.keys(playlistsGuardadas).forEach(k => {
         const opt = document.createElement('option');
         opt.value = k;
-        opt.textContent = '🎖️ ' + k.replace(/_/g, ' ').toUpperCase();
+        opt.textContent = k.replace(/_/g, ' ').toUpperCase();
         sel.appendChild(opt);
       });
       if (playlistsGuardadas[actual]) sel.value = actual;
@@ -1095,7 +1095,7 @@
         if (track) {
           playBandaAudioItem({
             id: track.id,
-            nombre: '📯 ' + track.nombre,
+            nombre: track.nombre,
             archivo: track.archivo,
             urlRemota: track.urlRemota
           });
