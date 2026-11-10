@@ -7,8 +7,8 @@
     <!-- BARRA DE EJECUCIÓN (AUTOMÁTICO / MANUAL) -->
     <div style="padding: 10px; background: #141c10; border-radius: 8px; border-left: 3px solid #7e9a3c; margin-bottom: 12px;">  <div style="font-size: 11px; font-weight: 800; color: #c9d9a0; margin-bottom: 8px;">EJECUCION:</div>     <div class="btn-grid">    <button class="action-btn" onclick="setAudioEjecucion('automatico')" style="padding: 8px 12px; font-size: 11px;">      <span class="dot" id="dotAudioAuto"></span>Modo Automático    </button>    <button class="action-btn" onclick="setAudioEjecucion('manual')" style="padding: 8px 12px; font-size: 11px;">      <span class="dot" id="dotAudioManual"></span>Modo Manual    </button>  </div></div>
           <!-- PROGRAMACIÓN HORARIA (BLOQUE INDEPENDIENTE) -->
-    <div class="card" id="cardProgramacionHoraria" style="background:#10170f; border:1px solid #3a4a2c; border-radius:10px; padding:14px; margin-bottom:14px;">          <div style="font-size:12px; font-weight:800; color:#d6c58a; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;">            <span>⏰ PROGRAMACIÓN HORARIA</span>            <span style="font-size:11px; color:#8f9a7e;" id="lblInfoOcaso"></span>          </div>          <!-- VENTANA SIMPLIFICADA DE HUSO HORARIO -->            <div style="background:#10170f; border:1px solid #3a4a2c; border-radius:6px; padding:8px 10px;">              <div style="display:flex; justify-content:space-between; align-items:center;">                <div style="display:flex; align-items:center; gap:6px;">                  <span style="font-size:11.5px; font-weight:800; color:#8f9a7e;">🌐 HUSO HORARIO:</span>                  <span style="font-size:12px; font-weight:900; color:#d6c58a;" id="lblHusoTextoVisible">UTC+2 (B)</span>                </div>                <button type="button" class="action-btn" id="btnToggleHuso" onclick="toggleSelectorHusoIAB()" style="padding:3px 8px; font-size:11px; min-height:26px;">                  ⚙️ Cambiar                </button>              </div>              <!-- DESPLEGABLE OCULTO (SOLO SI SE OPRIME CAMBIAR) -->              <div id="boxDesplegableHuso" style="display:none; margin-top:8px; padding-top:8px; border-top:1px dashed #3a4a2c;">                <select id="selHusoHorario" style="width:100%; background:#141c10; border:1.5px solid #d6c58a; border-radius:6px; color:#fff; font-size:12px; font-weight:800; padding:6px 8px;" onchange="onSeleccionarHusoIAB(this.value)">
-                  <option value="auto" selected>📱 Hora del Dispositivo (Auto)</option>
+    <div class="card" id="cardProgramacionHoraria" style="background:#10170f; border:1px solid #3a4a2c; border-radius:10px; padding:14px; margin-bottom:14px;">          <div style="font-size:12px; font-weight:800; color:#d6c58a; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;">            <span>PROGRAMACIÓN HORARIA</span>            <span style="font-size:11px; color:#8f9a7e;" id="lblInfoOcaso"></span>          </div>          <!-- VENTANA SIMPLIFICADA DE HUSO HORARIO -->            <div style="background:#10170f; border:1px solid #3a4a2c; border-radius:6px; padding:8px 10px;">              <div style="display:flex; justify-content:space-between; align-items:center;">                <div style="display:flex; align-items:center; gap:6px;">                  <span style="font-size:11.5px; font-weight:800; color:#8f9a7e;">HUSO HORARIO:</span>                  <span style="font-size:12px; font-weight:900; color:#d6c58a;" id="lblHusoTextoVisible">UTC+2 (B)</span>                </div>                <button type="button" class="action-btn" id="btnToggleHuso" onclick="toggleSelectorHusoIAB()" style="padding:3px 8px; font-size:11px; min-height:26px;">                  Cambiar                </button>              </div>              <!-- DESPLEGABLE OCULTO (SOLO SI SE OPRIME CAMBIAR) -->              <div id="boxDesplegableHuso" style="display:none; margin-top:8px; padding-top:8px; border-top:1px dashed #3a4a2c;">                <select id="selHusoHorario" style="width:100%; background:#141c10; border:1.5px solid #d6c58a; border-radius:6px; color:#fff; font-size:12px; font-weight:800; padding:6px 8px;" onchange="onSeleccionarHusoIAB(this.value)">
+                  <option value="auto" selected>Hora del Dispositivo (Auto)</option>
                   <optgroup label="── HUSO CERO ──">
                     <option value="0">UTC +0 · Zulu (Z · GMT)</option>
                   </optgroup>
@@ -43,14 +43,14 @@
                 </select>              </div>            </div>          <!-- MODO IZADO: HORA FIJA (08:00 POR DEFECTO O MANUAL) -->
           <div id="boxHoraIzado" style="display:flex; align-items:center; justify-content:space-between; gap:10px; background:#10170f; border:1px solid #3a4a2c; border-radius:6px; padding:8px 10px; margin-top:8px;">
             <div style="display:flex; align-items:center; gap:6px;">
-              <span style="font-size:11.5px; font-weight:800; color:#8f9a7e;">⏱️ CAMBIAR HORA DEL IZADO A:</span>
+              <span style="font-size:11.5px; font-weight:800; color:#8f9a7e;">CAMBIAR HORA DEL IZADO A:</span>
             </div>
             <input type="time" id="inputHoraIzado" value="08:00" 
               style="background:#141c10; border:1.5px solid #d6c58a; border-radius:6px; color:#fff; font-size:15px; font-weight:800; padding:4px 8px; text-align:center;"
               oninput="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();" onchange="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();">
-          </div>          <!-- MODO ARRIADO: MANUAL / LOCALIDAD / GPS -->          <div id="boxHoraArriado" style="display:none; flex-direction:column; gap:10px;">                        <div style="font-size:11.5px; font-weight:800; color:#c2cfa8; margin-top:2px;">POSICIÓN PARA EL CÁLCULO DEL OCASO:</div>                        <!-- SELECTOR DE FUENTE DE POSICIÓN: 4 BOTONES -->            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">              <button type="button" class="action-btn primary" id="btnFuenteBase" onclick="setFuenteOcasoIAB('base')" style="font-size:11px; padding:8px 4px; justify-content:center;">                ⚓ Localidad / Base              </button>              <button type="button" class="action-btn" id="btnFuenteGps" onclick="setFuenteOcasoIAB('gps')" style="font-size:11px; padding:8px 4px; justify-content:center;">                📡 Posición GPS              </button>              <button type="button" class="action-btn" id="btnFuenteCoordManual" onclick="setFuenteOcasoIAB('coord')" style="font-size:11px; padding:8px 4px; justify-content:center;">                ✏️ Coord. Manuales              </button>              <button type="button" class="action-btn" id="btnFuenteManual" onclick="setFuenteOcasoIAB('manual')" style="font-size:11px; padding:8px 4px; justify-content:center;">                📝 Hora Manual              </button>            </div>            <!-- OP 1: POR BASE NAVAL / LOCALIDAD -->            <div id="subBoxBase" style="display:flex; flex-direction:column; gap:8px; background:#141c10; padding:10px; border-radius:6px; border:1px solid #3a4a2c;">
+          </div>          <!-- MODO ARRIADO: MANUAL / LOCALIDAD / GPS -->          <div id="boxHoraArriado" style="display:none; flex-direction:column; gap:10px;">                        <div style="font-size:11.5px; font-weight:800; color:#c2cfa8; margin-top:2px;">POSICIÓN PARA EL CÁLCULO DEL OCASO:</div>                        <!-- SELECTOR DE FUENTE DE POSICIÓN: 4 BOTONES -->            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">              <button type="button" class="action-btn primary" id="btnFuenteBase" onclick="setFuenteOcasoIAB('base')" style="font-size:11px; padding:8px 4px; justify-content:center;">                Localidad / Base              </button>              <button type="button" class="action-btn" id="btnFuenteGps" onclick="setFuenteOcasoIAB('gps')" style="font-size:11px; padding:8px 4px; justify-content:center;">                Posición GPS              </button>              <button type="button" class="action-btn" id="btnFuenteCoordManual" onclick="setFuenteOcasoIAB('coord')" style="font-size:11px; padding:8px 4px; justify-content:center;">                Coord. Manuales              </button>              <button type="button" class="action-btn" id="btnFuenteManual" onclick="setFuenteOcasoIAB('manual')" style="font-size:11px; padding:8px 4px; justify-content:center;">                Hora Manual              </button>            </div>            <!-- OP 1: POR BASE NAVAL / LOCALIDAD -->            <div id="subBoxBase" style="display:flex; flex-direction:column; gap:8px; background:#141c10; padding:10px; border-radius:6px; border:1px solid #3a4a2c;">
               <div style="display:flex; justify-content:space-between; align-items:center;">
-                <div style="font-size:11.5px; color:#d6c58a; font-weight:800;">📍 LOCALIDAD / BASE NAVAL MUNDIAL:</div>
+                <div style="font-size:11.5px; color:#d6c58a; font-weight:800;">LOCALIDAD / BASE NAVAL MUNDIAL:</div>
                 <span id="lblCoordenadasLocalidad" style="font-size:10px; color:#8f9a7e; font-weight:700;">36.62° N, 6.35° W</span>
               </div>
               
@@ -79,7 +79,7 @@
               <div style="display:flex; justify-content:space-between; align-items:center;">
                 <div style="font-size:11.5px; color:#c2cfa8; font-weight:700;">Lectura posición GPS:</div>
                 <button type="button" onclick="conectarGpsUsbSerialNMEA()" id="btnGpsSerial" style="background:#5c4d10; border:1.5px solid #c9a227; color:#d6c58a; padding:3px 8px; border-radius:5px; font-size:10.5px; font-weight:800; cursor:pointer;">
-                  🔌 Conectar GPS USB / Serie
+                  Conectar GPS USB / Serie
                 </button>
               </div>
               <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px; width:100%; box-sizing:border-box;">
@@ -140,8 +140,8 @@
                 </div>
               </div>
             </div>            <!-- OP 4: ENTRADA DIRECTA POR ORDEN DIARIA -->            <div id="subBoxManual" style="display:none; flex-direction:column; gap:6px; background:#141c10; padding:10px; border-radius:6px; border:1px solid #3a4a2c;">              <div style="display:flex; align-items:center; justify-content:space-between;">                <div>                  <div style="font-size:11.5px; color:#c2cfa8; font-weight:700;">Hora fijada manualmente:</div>                  <div style="font-size:10px; color:#8f9a7e;">Entrada horaria fija sin cálculo solar</div>                </div>                <input type="time" id="inputHoraArriadoManual" value="19:30"                   style="background:#10170f; border:1.5px solid #d6c58a; border-radius:6px; color:#fff; font-size:16px; font-weight:900; padding:6px 10px; text-align:center;"                  oninput="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();" onchange="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();">              </div>            </div>          </div>          <!-- TARJETA DESTACADA EN PANTALLA: POSICIÓN Y HORA DEL ARRIADO -->
-          <div style="margin-top:8px; background:#141c10; border:1.5px solid #3a4a2c; border-radius:8px; padding:10px 10px;">            <!-- LÍNEA 1: POSICIÓN EN PANTALLA (SOLICITUD EXPLÍCITA) -->            <div id="rowPosicionPantalla" style="display:flex; justify-content:space-between; align-items:center; padding-bottom:8px; margin-bottom:8px; border-bottom:1px solid #33402a; flex-wrap:wrap; gap:4px;">              <span style="font-size:11px; font-weight:800; color:#8f9a7e; display:flex; align-items:center; gap:4px;">                📍 POSICIÓN EN PANTALLA:              </span>              <span style="font-size:12px; font-weight:900; color:#d6c58a; text-align:right;" id="lblPosicionDisplay">                36°37.2'N, 006°21.0'W · Base Naval de Rota              </span>            </div>            <!-- LÍNEA 2: HORA DEL ARRIADO / OCASO Y CUENTA ATRÁS -->            <div style="display:flex; justify-content:space-between; align-items:center;">              <div>                <div style="font-size:11.5px; font-weight:800; color:#8f9a7e; text-transform:uppercase;" id="lblTituloHoraEfectiva">🎯 HORA DEL ARRIADO:</div>                <div style="font-size:22px; font-weight:900; color:#fbbf24; font-variant-numeric:tabular-nums;" id="lblHoraCeremonialDisplay">19:30h</div>              </div>              <div style="text-align:right;">                <div style="text-align:right;">
-                <div style="font-size:10.5px; font-weight:800; color:#8f9a7e; text-transform:uppercase;">⏱️ HORA SISTEMA:</div>
+          <div style="margin-top:8px; background:#141c10; border:1.5px solid #3a4a2c; border-radius:8px; padding:10px 10px;">            <!-- LÍNEA 1: POSICIÓN EN PANTALLA (SOLICITUD EXPLÍCITA) -->            <div id="rowPosicionPantalla" style="display:flex; justify-content:space-between; align-items:center; padding-bottom:8px; margin-bottom:8px; border-bottom:1px solid #33402a; flex-wrap:wrap; gap:4px;">              <span style="font-size:11px; font-weight:800; color:#8f9a7e; display:flex; align-items:center; gap:4px;">                POSICIÓN EN PANTALLA:              </span>              <span style="font-size:12px; font-weight:900; color:#d6c58a; text-align:right;" id="lblPosicionDisplay">                36°37.2'N, 006°21.0'W · Base Naval de Rota              </span>            </div>            <!-- LÍNEA 2: HORA DEL ARRIADO / OCASO Y CUENTA ATRÁS -->            <div style="display:flex; justify-content:space-between; align-items:center;">              <div>                <div style="font-size:11.5px; font-weight:800; color:#8f9a7e; text-transform:uppercase;" id="lblTituloHoraEfectiva">HORA DEL ARRIADO:</div>                <div style="font-size:22px; font-weight:900; color:#fbbf24; font-variant-numeric:tabular-nums;" id="lblHoraCeremonialDisplay">19:30h</div>              </div>              <div style="text-align:right;">                <div style="text-align:right;">
+                <div style="font-size:10.5px; font-weight:800; color:#8f9a7e; text-transform:uppercase;">HORA SISTEMA:</div>
                 <div style="display:flex; align-items:baseline; justify-content:flex-end; gap:6px;">
                   <span style="font-size:22px; font-weight:900; color:#d6c58a; font-variant-numeric:tabular-nums;" id="lblCuentaAtras">--:--:--</span>
                   <span style="font-size:22px; font-weight:900; color:#d6c58a;" id="lblHusoNatoBox">A</span>
@@ -225,7 +225,7 @@
 // MÓDULO HORARIO Y ASTRONÓMICO ADAPTADO (IAB)
 // ==========================================
 var cerModoIAB = 'izado';
-  var audioEjecucion = 'automatico';
+  var audioEjecucion = 'manual';
 var cerFuenteOcasoIAB = 'base';
 var cerHusoHorarioIAB = 'auto';
 var cerHoraObjetivoIAB = '08:00';
@@ -271,7 +271,7 @@ function toggleSelectorHusoIAB() {
   if (!box) return;
   const abierto = (box.style.display === 'block');
   box.style.display = abierto ? 'none' : 'block';
-  if (btn) btn.textContent = abierto ? '⚙️ Cambiar' : '✖ Cerrar';
+  if (btn) btn.textContent = abierto ? 'Cambiar' : '✖ Cerrar';
 }
 
 function onSeleccionarHusoIAB(val) {
@@ -279,7 +279,7 @@ function onSeleccionarHusoIAB(val) {
   const box = document.getElementById('boxDesplegableHuso');
   const btn = document.getElementById('btnToggleHuso');
   if (box) box.style.display = 'none';
-  if (btn) btn.textContent = '⚙️ Cambiar';
+  if (btn) btn.textContent = 'Cambiar';
 }
 
 function obtenerTextoHusoIAB(valHuso) {
@@ -615,7 +615,7 @@ function toggleSelectorHusoIAB() {
   if (!box) return;
   const abierto = (box.style.display === 'block');
   box.style.display = abierto ? 'none' : 'block';
-  if (btn) btn.textContent = abierto ? '⚙️ Cambiar' : '✖ Cerrar';
+  if (btn) btn.textContent = abierto ? 'Cambiar' : '✖ Cerrar';
 }
 
 function onSeleccionarHusoIAB(val) {
@@ -623,7 +623,7 @@ function onSeleccionarHusoIAB(val) {
   const box = document.getElementById('boxDesplegableHuso');
   const btn = document.getElementById('btnToggleHuso');
   if (box) box.style.display = 'none';
-  if (btn) btn.textContent = '⚙️ Cambiar';
+  if (btn) btn.textContent = 'Cambiar';
 }
 
 function obtenerTextoHusoIAB(valHuso) {
@@ -787,7 +787,7 @@ function refrescarPosicionYHoraEnPantallaIAB() {
     if (lblBox) lblBox.textContent = letraHuso;
   }
   if (lblTitulo) {
-    lblTitulo.textContent = (cerModoIAB === 'izado') ? '🎯 HORA DEL IZADO:' : '🎯 HORA DEL ARRIADO:';
+    lblTitulo.textContent = (cerModoIAB === 'izado') ? '🎯 HORA DEL IZADO:' : 'HORA DEL ARRIADO:';
   }
   
   // Huso natural estimado por longitud geográfica
@@ -947,7 +947,7 @@ setTimeout(() => {
 }, 100);
 
 
-    var modo = 'izado', conGuardia = true, conSenales = false, modalidadPresenten = 'corneta', acompañamiento = 'himno', oracion = 'corneta';audioEjecucion = 'automatico';;    var cerPuntosActivosManualIAA = [], arriado = 'manual', ejecucion = 'automatica', posicion = { tipo: 'base', lat: 37.2521, lon: -6.3675 };      const URL_BASE_IZADO_BASE = 'https://raw.githubusercontent.com/alavante/izado_base/main/audios/';
+    var modo = 'izado', conGuardia = true, conSenales = false, modalidadPresenten = 'corneta', acompañamiento = 'corneta', oracion = 'corneta';audioEjecucion = 'manual';;    var cerPuntosActivosManualIAA = [], arriado = 'manual', ejecucion = 'automatica', posicion = { tipo: 'base', lat: 37.2521, lon: -6.3675 };      const URL_BASE_IZADO_BASE = 'https://raw.githubusercontent.com/alavante/izado_base/main/audios/';
 
     const audioURLs = {
       '1_izado': URL_BASE_IZADO_BASE + '01_01_senales_izado.mp3',
@@ -1522,11 +1522,12 @@ function renderPuntos() {
 
       const pAcomp = localStorage.getItem('pref_acomp');
       if (pAcomp) acompañamiento = pAcomp;
+      else acompañamiento = 'corneta';
 
       const pOracion = localStorage.getItem('pref_oracion');
       if (pOracion) oracion = pOracion;
 
-      const pAudioEjec = localStorage.getItem('pref_audio_ejecucion') || 'automatico';
+      const pAudioEjec = localStorage.getItem('pref_audio_ejecucion') || 'manual';
       setAudioEjecucion(pAudioEjec);
 
       const pModo = localStorage.getItem('pref_modo') || 'izado';
