@@ -223,7 +223,7 @@
     <div class="view-section active" id="viewAuth">
       <div class="card">
         <div class="card-title">
-          <span>👑 Honores a Autoridades</span>
+          <span>Autoridad:</span>
           
         </div>
 
@@ -250,7 +250,7 @@
               <div style="font-size:11px; color:#8f9a7e;" id="cfgAuthSubHAU">Honores reglamentarios de Ordenanza</div>
             </div>
             <button class="action-btn" style="min-height:30px; padding:4px 10px; font-size:11px;" onclick="resetAuthSelectionHAU()">
-              ↩️ Cambiar
+              Cambiar
             </button>
           </div>
 
@@ -262,7 +262,7 @@
           <!-- 1. TOQUES DE CORNETA (FIRMES + EJECUTIVA + DESCANSO) -->
           <div class="toggle-row" id="rowCorneta">
             <div>
-              <div class="toggle-label">🎺 Toques de Corneta</div>
+              <div class="toggle-label">Toques de Corneta</div>
               <div class="toggle-desc">Firmes, Ejecutiva de Marcha/Himno y Descanso</div>
             </div>
             <label class="switch">
@@ -274,7 +274,7 @@
           <!-- 2. SELECTOR POSICIÓN DEL ARMA -->
           <div class="toggle-row" id="rowArma" style="flex-direction:column; align-items:flex-start; gap:8px;">
             <div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
-              <div class="toggle-label">🎖️ Posición del Arma:</div>
+              <div class="toggle-label">Posición del Arma:</div>
               <span style="font-size:11px; color:#d6c58a; font-weight:700;" id="lblArmaActualHAU">Presenten Armas</span>
             </div>
             <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:6px; width:100%;">
@@ -293,11 +293,11 @@
           <!-- 3. VOCES DE VIVA ESPAÑA -->
           <div class="toggle-row" id="rowVivasHAU">
             <div>
-              <div class="toggle-label" id="lblVivas">🗣️ Saludo a la voz</div>
+              <div class="toggle-label" id="lblVivas">Saludo a la voz (Buques)</div>
               <div class="toggle-desc" id="descVivasHAU">7 Voces de Viva España</div>
             </div>
             <label class="switch">
-              <input type="checkbox" id="chkVivasHAU" checked>
+              <input type="checkbox" id="chkVivasHAU">
               <span class="slider"></span>
             </label>
           </div>
@@ -305,7 +305,7 @@
           <!-- 4. SALVAS DE ORDENANZA -->
           <div class="toggle-row" id="rowSalvasHAU">
             <div>
-              <div class="toggle-label" id="lblSalvas">💥 Salvas de Ordenanza</div>
+              <div class="toggle-label">Salvas de Ordenanza</div>
               <div class="toggle-desc" id="descSalvasHAU">21 Salvas de Ordenanza simultáneas con el himno</div>
             </div>
             <label class="switch">
@@ -317,7 +317,7 @@
           <!-- 5. MÚSICA / HIMNOS -->
           <div id="anthemPickerBoxHAU" style="display:none; background:#10170f; border:1px solid #3a4a2c; border-radius:8px; padding:10px; margin-bottom:12px;">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-              <span style="font-size:12px; font-weight:700; color:#e8e4d0;" id="lblAnthemPickerTitleHAU">🎵 Seleccione Himno:</span>
+              <span style="font-size:12px; font-weight:700; color:#e8e4d0;" id="lblAnthemPickerTitleHAU">Seleccione Himno:</span>
               <span style="font-size:11px; color:#d6c58a; font-weight:800;" id="selectedAnthemNameHAU">Francia</span>
             </div>
             <input type="text" id="txtAnthemSearchHAU" placeholder="🔍 Buscar país u organismo (156 disponibles)..." 
@@ -333,7 +333,7 @@
 
           <div class="toggle-row" id="rowMusicaHAU">
             <div>
-              <div class="toggle-label" id="lblMusica">🎺 Música / Himnos</div>
+              <div class="toggle-label">Música / Himnos</div>
               <div class="toggle-desc" id="descMusicaHAU">Himno Nacional de España</div>
             </div>
             <label class="switch">
@@ -348,7 +348,7 @@
             <button id="btnEjecutivaPrincipal" class="action-btn primary" 
               style="background:#c9a227; border-color:#d6c58a; justify-content:center; font-size:15px; font-weight:900; padding:15px; width:100%; letter-spacing:0.5px; box-shadow:0 4px 12px rgba(143,174,58,0.3);" 
               onclick="executeConfiguredAuthHAU()">
-              <span>▶️ Ejecutiva</span>
+              <span>Ejecutiva</span>
             </button>
 
             <!-- BARRA ROJA ACTIVA ABAJO (CORTADA DE ARRIBA: .status-bar Y .status-bar-stop-btn) -->
@@ -636,7 +636,7 @@
       const chkVivasHAU = document.getElementById('chkVivasHAU');
       if (auth.vivas > 0) {
         if (rowVivasHAU) rowVivasHAU.style.display = 'flex';
-        if (chkVivasHAU) chkVivasHAU.checked = true;
+        if (chkVivasHAU) chkVivasHAU.checked = false;
         let vTxt = (auth.vivas === 1 ? '1 Voz de Viva España' : auth.vivas + ' Voces de Viva España');
         document.getElementById('descVivasHAU').textContent = vTxt;
       } else {
