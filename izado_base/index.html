@@ -2,7 +2,7 @@
     <img src="https://alavante.github.io/turuta/badge_izado.png" alt="TURUTA" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; flex-shrink: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.4);">
     <div class="brand-title" style="flex: 1; text-align: center; font-size: 13px; line-height: 1.2;">IZADO/ARRIADO EN BASES Y ACUARTELAMIENTOS</div>
     <a href="https://alavante.github.io/turuta/" style="display:inline-flex; align-items:center; gap:5px; background:#33402a; border:1px solid #c9a227; color:#d6c58a; padding:5px 10px; border-radius:6px; font-size:13px; font-weight:800; text-decoration:none; flex-shrink: 0;">TURUTA</a>
-  </header>  <main>          <!-- EVENTO -->    <div class="card">      <div class="card-title">⚙️ Evento</div>           <div class="btn-grid" style="margin-bottom: 10px;">  <button class="action-btn primary" id="btnIzado" onclick="setModo('izado')"><span class="dot" id="dotIzado"></span>📌 Izado</button>  <button class="action-btn primary" id="btnArriado" onclick="setModo('arriado')"><span class="dot" id="dotArriado"></span>📖 Arriado</button></div>       </div>
+  </header>  <main>          <!-- EVENTO -->    <div class="card">      <div class="card-title">Evento</div>           <div class="btn-grid" style="margin-bottom: 10px;">  <button class="action-btn primary" id="btnIzado" onclick="setModo('izado')"><span class="dot" id="dotIzado"></span> Izado</button>  <button class="action-btn primary" id="btnArriado" onclick="setModo('arriado')"><span class="dot" id="dotArriado"></span> Arriado</button></div>       </div>
 
     <!-- BARRA DE EJECUCIÓN (AUTOMÁTICO / MANUAL) -->
     <div style="padding: 10px; background: #141c10; border-radius: 8px; border-left: 3px solid #7e9a3c; margin-bottom: 12px;">  <div style="font-size: 11px; font-weight: 800; color: #c9d9a0; margin-bottom: 8px;">EJECUCION:</div>     <div class="btn-grid">    <button class="action-btn" onclick="setAudioEjecucion('automatico')" style="padding: 8px 12px; font-size: 11px;">      <span class="dot" id="dotAudioAuto"></span>Modo Automático    </button>    <button class="action-btn" onclick="setAudioEjecucion('manual')" style="padding: 8px 12px; font-size: 11px;">      <span class="dot" id="dotAudioManual"></span>Modo Manual    </button>  </div></div>
@@ -153,12 +153,12 @@
     <div id="separadorProgOpc" style="height: 14px; margin: 12px 0;" aria-hidden="true"></div>
 
     <!-- BLOQUE INDEPENDIENTE: OPCIONES -->
-    <div class="card" id="cardOpciones">      <div class="card-title">🎵 Opciones</div>             <div class="barra" style="margin-bottom: 16px;">  <div class="barra-label">🎺 Voz Señales...:</div>  <div class="barra-botones">    <button class="barra-btn" onclick="setSenales(true)"><span class="dot" id="dotSenalesSi"></span>Sí</button>    <button class="barra-btn" onclick="setSenales(false)"><span class="dot" id="dotSenalesNo"></span>No</button>  </div></div>
-                        <div class="barra">  <div class="barra-label">💂 Guardia Militar:</div>  <div class="barra-botones">    <button class="barra-btn" onclick="setGuardia(true)"><span class="dot" id="dotGuardiaSi"></span>Sí</button>    <button class="barra-btn" onclick="setGuardia(false)"><span class="dot" id="dotGuardiaNo"></span>No</button>  </div></div>                        <div class="barra" id="seccionPresenten" style="display: none;">        <div class="barra-label">🎙️ Orden Presenten:</div>        <div class="barra-botones">          <button class="barra-btn" onclick="setPresenten('voz')"><span class="dot" id="dotPresentenVoz"></span>Voz</button>          <button class="barra-btn" onclick="setPresenten('corneta')"><span class="dot" id="dotPresentenCorneta"></span>Corneta</button>        </div>      </div>      <div style="padding: 10px; background: #141c10; border-radius: 8px; border-left: 3px solid #10b981; margin-bottom: 12px;">        <div style="font-size: 11px; font-weight: 800; color: #d6c58a; margin-bottom: 8px;">🎵 Audio:</div>        <div class="btn-grid">          <button class="action-btn" onclick="setAcompañamiento('himno')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompHimno"></span>Himno</button>          <button class="action-btn" onclick="setAcompañamiento('corneta')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompCorneta"></span>Corneta</button>        </div>      </div>
+    <div class="card" id="cardOpciones">      <div class="card-title">Opciones</div>             <div class="barra" style="margin-bottom: 16px;">  <div class="barra-label">Voz Señales...:</div>  <div class="barra-botones">    <button class="barra-btn" onclick="setSenales(true)"><span class="dot" id="dotSenalesSi"></span> Sí</button>    <button class="barra-btn" onclick="setSenales(false)"><span class="dot" id="dotSenalesNo"></span> No</button>  </div></div>
+                        <div class="barra">  <div class="barra-label">Guardia Militar:</div>  <div class="barra-botones">    <button class="barra-btn" onclick="setGuardia(true)"><span class="dot" id="dotGuardiaSi"></span> Sí</button>    <button class="barra-btn" onclick="setGuardia(false)"><span class="dot" id="dotGuardiaNo"></span> No</button>  </div></div>                        <div class="barra" id="seccionPresenten" style="display: none;">        <div class="barra-label">Orden Presenten:</div>        <div class="barra-botones">          <button class="barra-btn" onclick="setPresenten('voz')"><span class="dot" id="dotPresentenVoz"></span> Voz</button>          <button class="barra-btn" onclick="setPresenten('corneta')"><span class="dot" id="dotPresentenCorneta"></span> Corneta</button>        </div>      </div>      <div style="padding: 10px; background: #141c10; border-radius: 8px; border-left: 3px solid #10b981; margin-bottom: 12px;">        <div style="font-size: 11px; font-weight: 800; color: #d6c58a; margin-bottom: 8px;">Audio:</div>        <div class="btn-grid">          <button class="action-btn" onclick="setAcompañamiento('himno')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompHimno"></span> Himno</button>          <button class="action-btn" onclick="setAcompañamiento('corneta')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompCorneta"></span> Corneta</button>        </div>      </div>
       <!-- SELECCIÓN Y SECUENCIA DE HIMNOS (SOLO EN MODO HIMNO) -->
       <div id="seccionHimnos" style="display: none; padding: 12px; background: #10170f; border: 1.5px solid #3a4a2c; border-radius: 8px; margin-bottom: 12px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <div style="font-size: 11.5px; font-weight: 800; color: #d6c58a;">🌐 SECUENCIA DE HIMNOS (P5):</div>
+          <div style="font-size: 11.5px; font-weight: 800; color: #d6c58a;">SECUENCIA DE HIMNOS (P5):</div>
           <span style="font-size: 10px; color: #8f9a7e;">Descarga bajo demanda</span>
         </div>
         
@@ -174,7 +174,7 @@
             ➕ Añadir
           </button>
         </div>
-      </div>      <div id="seccionOracion" style="display: none; padding: 10px; background: #141c10; border-radius: 8px; border-left: 3px solid #f59e0b;">        <div style="font-size: 11px; font-weight: 800; color: #fcd34d; margin-bottom: 8px;">✝️ Oración:</div>        <div class="btn-grid">          <button class="action-btn" onclick="setOracion('corneta')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionCorneta"></span>Corneta</button>          <button class="action-btn" onclick="setOracion('Cantada')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionCantada"></span>Cantada</button>          <button class="action-btn" onclick="setOracion('leida')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionLeida"></span>Leída</button>          <button class="action-btn" onclick="setOracion('ninguna')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionNinguna"></span>Ninguna</button>        </div>      </div>   </div>                  <!-- RELOJ (standalone, fuera de PROGRAMACIÓN) -->    <div class="card" style="display: none;">      <div class="reloj-grande" id="relojStandalone">--:--:--</div>      <div class="reloj-info"><span id="husoInfoStandalone">UTC</span> | <span id="fechaInfoStandalone">--/--/----</span></div>    </div>             <!-- BARRA DE ESTADO / STOP -->
+      </div>      <div id="seccionOracion" style="display: none; padding: 10px; background: #141c10; border-radius: 8px; border-left: 3px solid #f59e0b;">        <div style="font-size: 11px; font-weight: 800; color: #fcd34d; margin-bottom: 8px;">Oración:</div>        <div class="btn-grid">          <button class="action-btn" onclick="setOracion('corneta')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionCorneta"></span> Corneta</button>          <button class="action-btn" onclick="setOracion('Cantada')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionCantada"></span> Cantada</button>          <button class="action-btn" onclick="setOracion('leida')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionLeida"></span> Leída</button>          <button class="action-btn" onclick="setOracion('ninguna')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionNinguna"></span> Ninguna</button>        </div>      </div>   </div>                  <!-- RELOJ (standalone, fuera de PROGRAMACIÓN) -->    <div class="card" style="display: none;">      <div class="reloj-grande" id="relojStandalone">--:--:--</div>      <div class="reloj-info"><span id="husoInfoStandalone">UTC</span> | <span id="fechaInfoStandalone">--/--/----</span></div>    </div>             <!-- BARRA DE ESTADO / STOP -->
     <div class="status-bar" style="margin-bottom: 12px;">
       <span id="status">Esperando inicio...</span>
       <button class="status-stop" onclick="stopAll()">⏹️ STOP</button>
@@ -1014,20 +1014,20 @@ function renderPuntos() {
   const { strT0, strT5 } = obtenerHorasCalculadasCeremonial();
   
   const labels = {
-    1: 'P1: Señales a la bandera (' + strT5 + ')',
-    2: 'P2: Orden de Firmes (Corneta) (' + strT0 + ')',
-    3: 'P3: Orden de Presenten Armas(' + modalidadPresenten + ')',
-    4: 'P4: Ejecutiva Himno Nacional',
-    5: 'P5: ' + acompañamiento,
-    6: 'P6: Descansen Armas',
-    7: 'P7: Envainen Armas',
-    8: 'P8: Oración (' + oracion + ')'
+    1: 'Señales a la bandera (' + strT5 + ')',
+    2: 'Orden de Firmes (Corneta) (' + strT0 + ')',
+    3: 'Orden de Presenten Armas (' + modalidadPresenten + ')',
+    4: 'Ejecutiva Himno Nacional',
+    5: (acompañamiento === 'himno' ? 'Himno Nacional' : (acompañamiento === 'corneta' ? 'Toque de Corneta' : acompañamiento)),
+    6: 'Descansen Armas',
+    7: 'Envainen Armas',
+    8: 'Oración (' + oracion + ')'
   };
   
   for (let p of cerPuntosActivosManualIAA) {
     const btn = document.createElement('button');
     btn.className = 'punto-btn';
-    btn.textContent = labels[p] || ('Punto ' + p);
+    btn.textContent = labels[p] || '';
     btn.onclick = () => reproducirPunto(p);
     grid.appendChild(btn);
   }
