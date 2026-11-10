@@ -35,6 +35,20 @@
     footer { text-align:center; margin-top:18px; padding:12px; color:#8f9a7e; font-size:11px; }
     footer .copy { font-weight:700; margin-bottom:2px; }
     footer a { color:#d6c58a; text-decoration:none; }
+  
+    .ab-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px); z-index: 300; display: none; align-items: center; justify-content: center; padding: 16px; }
+    .ab-content { background: #141c10; border: 2px solid #c9a227; border-radius: 14px; width: 100%; max-width: 500px; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.8); text-align: left; }
+    .ab-header { background: #1c2617; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #3a4a2c; }
+    .ab-title { font-size: 14px; font-weight: 800; color: #d6c58a; }
+    .ab-close { background: transparent; border: none; color: #8f9a7e; font-size: 20px; cursor: pointer; }
+    .ab-body { padding: 16px; overflow-y: auto; font-size: 13.5px; line-height: 1.6; color: #e8e4d0; }
+    .ab-body h4 { margin: 14px 0 4px; font-size: 13px; color: #d6c58a; }
+    .ab-body h4:first-child { margin-top: 0; }
+    .ab-body p { margin: 0 0 8px; }
+    .ab-body a { color: #d6c58a; }
+    .ab-foot { text-align: center; font-size: 12px; font-weight: 800; color: #8f9a7e; margin-top: 14px; border-top: 1px solid #3a4a2c; padding-top: 10px; }
+    .acerca-btn { background: transparent; border: none; color: #8f9a7e; font-size: 11px; font-weight: 600; cursor: pointer; margin-top: 6px; padding: 4px 10px; text-decoration: underline; text-underline-offset: 3px; }
+    .acerca-btn:active { color: #d6c58a; }
   </style>
   <link rel="manifest" href="manifest.json">
   <script>
@@ -72,10 +86,35 @@
     </main>
     <footer>
       <div class="copy">@TDF 2026</div>
-      <div>Escríbanos a alavante.usuarios@gmail.com</div>
-      <div style="margin-top:4px;"><a href="privacidad.html">Política de privacidad</a></div>
-      <div style="color:#c9a227; font-weight:700; margin-top:4px;">v1.0.0 · TURUTA</div>
+      <div style="font-size: 12px; font-weight: 600; color: #8f9a7e; margin: 4px 0;">alavante.usuarios@gmail.com</div>
+      <div style="color:#c9a227; font-weight:700; margin-top:2px;">v2.01.10 · TURUTA</div>
+      <button type="button" class="acerca-btn" onclick="abrirAcerca()">Acerca de...</button>
     </footer>
   </div>
+  <!-- ACERCA DE -->
+  <div id="acercaModal" class="ab-overlay" onclick="cerrarAcerca()">
+    <div class="ab-content" onclick="event.stopPropagation()" role="dialog" aria-modal="true" aria-labelledby="acercaTitulo">
+      <div class="ab-header">
+        <div id="acercaTitulo" class="ab-title">Acerca de TURUTA</div>
+        <button type="button" class="ab-close" onclick="cerrarAcerca()" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="ab-body">
+        <h4>Sugerencias</h4>
+        <p>Esta aplicación está en continuo crecimiento tratando de recoger las necesidades de los usuarios. Toda sugerencia es bienvenida a través del correo <a href="mailto:alavante.usuarios@gmail.com">alavante.usuarios@gmail.com</a>.</p>
+        <h4>Privacidad</h4>
+        <p>TURUTA no registra ni comparte ningún dato personal ni su posición. El cálculo del ocaso se hace en el propio dispositivo. La política completa está en <a href="privacidad.html">https://alavante.github.io/turuta/privacidad.html</a></p>
+        <h4>Origen de los contenidos</h4>
+        <p>Los himnos y marchas españoles, en su mayoría, han sido descargados de la página web del Ministerio de Defensa de España y del canal de YouTube «Marchas Militares Españolas». La canción «El novio de la muerte» ha sido interpretada por el coro y banda de la AGM y el policía nacional D. Ángel Cortés Castejón. Los himnos internacionales proceden de la página web de la US Navy Band. Los toques de corneta han sido interpretados por el C1 IM D. Francisco Javier Aneiros Anca y el Mro. Israel Nieto García, y obtenidos también del canal de YouTube SONIC OFICIAL LCD.</p>
+        <p>Las voces de honores han sido grabadas por el C1 Carlos Estrella a bordo de la «Infanta Elena». El resto de voces pertenece a las marineros Carmen y Elena. La voz de «Presenten armas» corresponde al Sgto. D. Pedro.</p>
+        <h4>Agradecimientos</h4>
+        <p>Agradecimiento infinito a los testers que han hecho posible que esta aplicación salga adelante.</p>
+        <div class="ab-foot">TURUTA · Versión 2.01.10 · © TDF 2026</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function abrirAcerca(){ var m=document.getElementById('acercaModal'); if(m) m.style.display='flex'; }
+    function cerrarAcerca(){ var m=document.getElementById('acercaModal'); if(m) m.style.display='none'; }
+  </script>
 </body>
 </html>
