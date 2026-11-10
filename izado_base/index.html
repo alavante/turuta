@@ -158,7 +158,7 @@
       <!-- SELECCIÓN Y SECUENCIA DE HIMNOS (SOLO EN MODO HIMNO) -->
       <div id="seccionHimnos" style="display: none; padding: 12px; background: #10170f; border: 1.5px solid #3a4a2c; border-radius: 8px; margin-bottom: 12px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <div style="font-size: 11.5px; font-weight: 800; color: #d6c58a;">SECUENCIA DE HIMNOS (P5):</div>
+          <div style="font-size: 11.5px; font-weight: 800; color: #d6c58a;">Secuencia de Himnos:</div>
           <span style="font-size: 10px; color: #8f9a7e;">Descarga bajo demanda</span>
         </div>
         
@@ -848,7 +848,7 @@ function verificarDisparoAutomaticoCeremonial(hh, mm, ss) {
   const { strT0, strT5 } = obtenerHorasCalculadasCeremonial();
   
   // T-5 min: Disparo automático de P1 (Señales a la bandera) SOLO si P1 está activado
-  const tieneP1 = (typeof conSenales !== 'undefined' ? conSenales : true) && 
+  const tieneP1 = (typeof conSenales !== 'undefined' ? conSenales : false) && 
                   (Array.isArray(cerPuntosActivosManualIAA) ? cerPuntosActivosManualIAA.includes(1) : true);
                   
   if (minActual === strT5 && !cerDisparoSenalesHecho) {
@@ -947,7 +947,7 @@ setTimeout(() => {
 }, 100);
 
 
-    var modo = 'izado', conGuardia = true, conSenales = true, modalidadPresenten = 'voz', acompañamiento = 'himno', oracion = 'corneta';audioEjecucion = 'automatico';;    var cerPuntosActivosManualIAA = [], arriado = 'manual', ejecucion = 'automatica', posicion = { tipo: 'base', lat: 37.2521, lon: -6.3675 };      const URL_BASE_IZADO_BASE = 'https://raw.githubusercontent.com/alavante/izado_base/main/audios/';
+    var modo = 'izado', conGuardia = true, conSenales = false, modalidadPresenten = 'corneta', acompañamiento = 'himno', oracion = 'corneta';audioEjecucion = 'automatico';;    var cerPuntosActivosManualIAA = [], arriado = 'manual', ejecucion = 'automatica', posicion = { tipo: 'base', lat: 37.2521, lon: -6.3675 };      const URL_BASE_IZADO_BASE = 'https://raw.githubusercontent.com/alavante/izado_base/main/audios/';
 
     const audioURLs = {
       '1_izado': URL_BASE_IZADO_BASE + '01_01_senales_izado.mp3',
@@ -1514,9 +1514,11 @@ function renderPuntos() {
 
       const pSenales = localStorage.getItem('pref_senales');
       if (pSenales !== null) conSenales = (pSenales === 'true');
+      else conSenales = false;
 
       const pPresenten = localStorage.getItem('pref_presenten');
       if (pPresenten) modalidadPresenten = pPresenten;
+      else modalidadPresenten = 'corneta';
 
       const pAcomp = localStorage.getItem('pref_acomp');
       if (pAcomp) acompañamiento = pAcomp;
