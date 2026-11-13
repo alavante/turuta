@@ -194,14 +194,72 @@
   </div>
 
   <main>
-    <!-- BLOQUE 1: BANDA DE MÚSICA -->
+    <!-- BLOQUE 1: TOQUES DE CORNETA -->
+    <div class="card card-block-2">
+      <div class="card-title">
+        <span>CORNETA:</span>
+        </div>
+
+      <div class="field-group">
+        <label class="field-label" for="selCorneta">Toques Reglamentarios de Ordenanza</label>
+        <select id="selCorneta" class="custom-select">
+            <option value="">-- Seleccione Toque de Corneta --</option>
+            <option value="co_alto">Alto</option>
+            <option value="co_armen">Armen armas</option>
+            <option value="co_atencion">Atencion</option>
+            <option value="co_cambiodehombro">Cambio De Hombro</option>
+            <option value="co_contrasenialegion">Contraseña Legión</option>
+            <option value="co_cubrirse">Cubrirse</option>
+            <option value="co_defrente">De frente</option>
+            <option value="co_defrentepasofunerala">De frente Paso Funerala</option>
+            <option value="co_defrentepasoligero">De frente Paso Ligero</option>
+            <option value="co_derecha">Derecha</option>
+            <option value="co_descanso">Descanso</option>
+            <option value="co_diana">Diana</option>
+            <option value="co_discreccion">Discreccion</option>
+            <option value="co_findiscreccion">Fin Discreccion</option>
+            <option value="co_firmes">Firmes</option>
+            <option value="co_firmesautoridadprincipal">Firmes Autoridad Principal</option>
+            <option value="co_fraccionbatallon">Fracción Batallón</option>
+            <option value="co_fraccioncompania">Fracción Compañía</option>
+            <option value="co_fraccionescuadra">Fracción Escuadra</option>
+            <option value="co_fraccioninfantes">Fracción Infantes</option>
+            <option value="co_fraccionpeloton">Fracción Pelotón</option>
+            <option value="co_fraccionregimiento">Fracción Regimiento</option>
+            <option value="co_fraccionseccion">Fracción Sección</option>
+            <option value="co_himnomacional">Himno Nacional a Corneta</option>
+            <option value="co_izquierda">Izquierda</option>
+            <option value="co_llamadageneral">Llamada General</option>
+            <option value="co_llamadamandos">Llamada Mandos</option>
+            <option value="co_llamadaoficiales">Llamada Oficiales</option>
+            <option value="co_llamadatropa">Llamada Tropa</option>
+            <option value="co_mediavueltaar">Media Vuelta Ar</option>
+            <option value="co_presentenarmas">Presenten armas</option>
+            <option value="co_retreta">Retreta</option>
+            <option value="co_sobreelhombro">Sobre El Hombro</option>
+            <option value="co_sobreelhombroderecho">Sobre El Hombro Derecho</option>
+            <option value="co_oracioncorneta">Toque de Oración</option>
+          </select>
+      </div>
+
+      <!-- BOTONES DEBAJO DE LA BARRA DE CORNETA -->
+      <div class="corneta-btn-bar">
+        <button type="button" class="btn-action-main btn-play-corneta" onclick="playCornetaSeleccionadaMMT()">
+          <span>TOCAR CORNETA</span>
+        </button>
+        <button type="button" class="btn-action-main btn-add-corneta" onclick="addCornetaSeleccionadaAPlaylistMMT()">
+          <span>AÑADIR A LISTA</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- BLOQUE 2: BANDA DE MÚSICA -->
     <div class="card card-block-1">
       <div class="card-title">
         <span>BANDA DE MÚSICA</span>
-        </div>
+      </div>
 
-      <!-- Desplegable 1: Himnos Institucionales y Países -->
-      <div class="field-group">
+<div class="field-group">
         <label class="field-label" for="selCatInstitucionales">1. Himnos de España y Países (155)</label>
         <select id="selCatInstitucionales" class="custom-select" onchange="onMusicaSelectChange(this, 'institucionales')">
             <option value="">-- Seleccione Himno (España / Países Extranjeros) --</option>
@@ -365,72 +423,61 @@
         </select>
       </div>
 
-      <!-- Desplegable 2: Marchas Militares -->
+      <!-- Desplegable 2: Marchas, Himnos y Oraciones (Unificado) -->
       <div class="field-group">
-        <label class="field-label" for="selCatMarchas">2. Marchas Militares (22)</label>
-        <select id="selCatMarchas" class="custom-select" onchange="onMusicaSelectChange(this, 'marchas')">
-            <option value="">-- Seleccione Marcha Militar --</option>
-            <option value="mm_bajoladobleaguila">Bajo La Doble Aguila</option>
-            <option value="mm_cantinera">Cantinera</option>
-            <option value="mm_noviodelamuerte">El Novio de la Muerte</option>
-            <option value="mm_elabanico">El abanico</option>
-            <option value="mm_elturuta">El turuta</option>
-            <option value="mm_elviejoalmirante">El viejo almirante</option>
-            <option value="mm_ganandobarlovento">Ganando Barlovento</option>
-            <option value="mm_heroina">Heroina</option>
-            <option value="mm_laorgiadorada">La Orgia Dorada</option>
-            <option value="mm_laguardiadealabarderos">La guardia de alabarderos</option>
-            <option value="mm_lavueltadelosvoluntarios">La vuelta de los voluntarios</option>
-            <option value="mm_lascorsarias">Las corsarias</option>
-            <option value="mm_losgenerales">Los Generales</option>
-            <option value="mm_losquintos">Los Quintos</option>
-            <option value="mm_marchadeinfantes">Marcha de infantes</option>
-            <option value="mm_maresyvientos">Mares y vientos</option>
-            <option value="mm_pasoligero">Paso ligero</option>
-            <option value="mm_proaalamar">Proa a la mar</option>
-            <option value="mm_sanmarcial">San Marcial</option>
-            <option value="mm_sanquintin">San Quintin</option>
-            <option value="mm_viejoscamaradas">Viejos camaradas</option>
-            <option value="mm_vuelostriunfales">Vuelos triunfales</option>
+        <label class="field-label" for="selCatMarchasHimnos">2. Marchas, Himnos y Oraciones (41)</label>
+        <select id="selCatMarchasHimnos" class="custom-select" onchange="onMusicaSelectChange(this, 'marchas_himnos')">
+            <option value="">-- Seleccione Marcha, Himno u Oración --</option>
+            <optgroup label="── Marchas Militares (22) ──">
+              <option value="mm_bajoladobleaguila">Bajo La Doble Aguila</option>
+              <option value="mm_cantinera">Cantinera</option>
+              <option value="mm_noviodelamuerte">El Novio de la Muerte</option>
+              <option value="mm_elabanico">El abanico</option>
+              <option value="mm_elturuta">El turuta</option>
+              <option value="mm_elviejoalmirante">El viejo almirante</option>
+              <option value="mm_ganandobarlovento">Ganando Barlovento</option>
+              <option value="mm_heroina">Heroina</option>
+              <option value="mm_laorgiadorada">La Orgia Dorada</option>
+              <option value="mm_laguardiadealabarderos">La guardia de alabarderos</option>
+              <option value="mm_lavueltadelosvoluntarios">La vuelta de los voluntarios</option>
+              <option value="mm_lascorsarias">Las corsarias</option>
+              <option value="mm_losgenerales">Los Generales</option>
+              <option value="mm_losquintos">Los Quintos</option>
+              <option value="mm_marchadeinfantes">Marcha de infantes</option>
+              <option value="mm_maresyvientos">Mares y vientos</option>
+              <option value="mm_pasoligero">Paso ligero</option>
+              <option value="mm_proaalamar">Proa a la mar</option>
+              <option value="mm_sanmarcial">San Marcial</option>
+              <option value="mm_sanquintin">San Quintin</option>
+              <option value="mm_viejoscamaradas">Viejos camaradas</option>
+              <option value="mm_vuelostriunfales">Vuelos triunfales</option>
+            </optgroup>
+            <optgroup label="── Himnos de Armas y Cuerpos (15) ──">
+              <option value="mm_himnoartilleria">Himno de Artillería</option>
+              <option value="mm_himnocaballeria">Himno de Caballería</option>
+              <option value="mm_himnoinfanteria">Himno de Infantería</option>
+              <option value="mm_himnoinfmarina">Himno de Infantería de Marina</option>
+              <option value="mm_himnoingenieros">Himno de Ingenieros</option>
+              <option value="mm_himnoarmada">Himno de la Armada</option>
+              <option value="mm_himnobripac">Himno de la BRIPAC</option>
+              <option value="mm_himnoguardiacivil">Himno de la Guardia Civil</option>
+              <option value="mm_himnoguardiareal">Himno de la Guardia Real</option>
+              <option value="mm_himnolegion">Himno de la Legión</option>
+              <option value="mm_himnoume">Himno de la UME</option>
+              <option value="mm_himnoregulares">Himno de los Regulares</option>
+              <option value="mm_himnoejercitoaireespacio">Himno del Ejército del Aire y del Espacio</option>
+              <option value="mm_himnomoe">Himno del Mando de Operaciones Especiales</option>
+              <option value="mm_legionariosdelaire">Legionarios del aire</option>
+            </optgroup>
+            <optgroup label="── Música Religiosa y Oraciones (4) ──">
+              <option value="mm_lamuertenoeselfinal">La muerte no es el final</option>
+              <option value="mm_oracion">Oracion</option>
+              <option value="mm_oraciondelanoche">Oracion de la Noche</option>
+              <option value="mm_salvemarinera">Salve Marinera</option>
+            </optgroup>
         </select>
       </div>
 
-      <!-- Desplegable 3: Himnos de Armas y Cuerpos -->
-      <div class="field-group">
-        <label class="field-label" for="selCatHimnos">3. Himnos de Armas y Cuerpos (13)</label>
-        <select id="selCatHimnos" class="custom-select" onchange="onMusicaSelectChange(this, 'himnos')">
-            <option value="">-- Seleccione Himno de Arma / Cuerpo --</option>
-            <option value="mm_himnoartilleria">Himno de Artillería</option>
-            <option value="mm_himnocaballeria">Himno de Caballería</option>
-            <option value="mm_himnoinfanteria">Himno de Infantería</option>
-            <option value="mm_himnoinfmarina">Himno de Infantería de Marina</option>
-            <option value="mm_himnoingenieros">Himno de Ingenieros</option>
-            <option value="mm_himnoarmada">Himno de la Armada</option>
-            <option value="mm_himnobripac">Himno de la BRIPAC</option>
-            <option value="mm_himnoguardiacivil">Himno de la Guardia Civil</option>
-            <option value="mm_himnoguardiareal">Himno de la Guardia Real</option>
-            <option value="mm_himnolegion">Himno de la Legión</option>
-            <option value="mm_himnoume">Himno de la UME</option>
-            <option value="mm_himnoregulares">Himno de los Regulares</option>
-            <option value="mm_himnoejercitoaireespacio">Himno del Ejército del Aire y del Espacio</option>
-            <option value="mm_himnomoe">Himno del Mando de Operaciones Especiales</option>
-            <option value="mm_legionariosdelaire">Legionarios del aire</option>
-          </select>
-      </div>
-
-      <!-- Desplegable 4: Música Religiosa Militar -->
-      <div class="field-group">
-        <label class="field-label" for="selCatReligiosa">4. Música Religiosa Militar (4)</label>
-        <select id="selCatReligiosa" class="custom-select" onchange="onMusicaSelectChange(this, 'religiosa')">
-            <option value="">-- Seleccione Música Religiosa --</option>
-            <option value="mm_lamuertenoeselfinal">La muerte no es el final</option>
-            <option value="mm_oracion">Oracion</option>
-            <option value="mm_oraciondelanoche">Oracion de la Noche</option>
-            <option value="mm_salvemarinera">Salve Marinera</option>
-        </select>
-      </div>
-
-      <!-- BOTONERA COMÚN UNIFICADA -->
       <div class="common-btn-bar">
         <button type="button" id="btnPlayBandaCommon" class="btn-action-main btn-play-banda" onclick="playMusicaSeleccionadaMMT()">
           <span>PLAY</span>
@@ -440,65 +487,6 @@
         </button>
         <button type="button" id="btnLyricsBandaCommon" class="btn-action-main btn-lyrics-banda" onclick="verLetraMusicaSeleccionadaMMT()">
           <span>VER LETRA</span>
-        </button>
-      </div>
-    </div>
-
-    <!-- BLOQUE 2: TOQUES DE CORNETA -->
-    <div class="card card-block-2">
-      <div class="card-title">
-        <span>CORNETA:</span>
-        </div>
-
-      <div class="field-group">
-        <label class="field-label" for="selCorneta">Toques Reglamentarios de Ordenanza</label>
-        <select id="selCorneta" class="custom-select">
-            <option value="">-- Seleccione Toque de Corneta --</option>
-            <option value="co_alto">Alto</option>
-            <option value="co_armen">Armen armas</option>
-            <option value="co_atencion">Atencion</option>
-            <option value="co_cambiodehombro">Cambio De Hombro</option>
-            <option value="co_contrasenialegion">Contraseña Legión</option>
-            <option value="co_cubrirse">Cubrirse</option>
-            <option value="co_defrente">De frente</option>
-            <option value="co_defrentepasofunerala">De frente Paso Funerala</option>
-            <option value="co_defrentepasoligero">De frente Paso Ligero</option>
-            <option value="co_derecha">Derecha</option>
-            <option value="co_descanso">Descanso</option>
-            <option value="co_diana">Diana</option>
-            <option value="co_discreccion">Discreccion</option>
-            <option value="co_findiscreccion">Fin Discreccion</option>
-            <option value="co_firmes">Firmes</option>
-            <option value="co_firmesautoridadprincipal">Firmes Autoridad Principal</option>
-            <option value="co_fraccionbatallon">Fracción Batallón</option>
-            <option value="co_fraccioncompania">Fracción Compañía</option>
-            <option value="co_fraccionescuadra">Fracción Escuadra</option>
-            <option value="co_fraccioninfantes">Fracción Infantes</option>
-            <option value="co_fraccionpeloton">Fracción Pelotón</option>
-            <option value="co_fraccionregimiento">Fracción Regimiento</option>
-            <option value="co_fraccionseccion">Fracción Sección</option>
-            <option value="co_himnomacional">Himno Nacional a Corneta</option>
-            <option value="co_izquierda">Izquierda</option>
-            <option value="co_llamadageneral">Llamada General</option>
-            <option value="co_llamadamandos">Llamada Mandos</option>
-            <option value="co_llamadaoficiales">Llamada Oficiales</option>
-            <option value="co_llamadatropa">Llamada Tropa</option>
-            <option value="co_mediavueltaar">Media Vuelta Ar</option>
-            <option value="co_presentenarmas">Presenten armas</option>
-            <option value="co_retreta">Retreta</option>
-            <option value="co_sobreelhombro">Sobre El Hombro</option>
-            <option value="co_sobreelhombroderecho">Sobre El Hombro Derecho</option>
-            <option value="co_oracioncorneta">Toque de Oración</option>
-          </select>
-      </div>
-
-      <!-- BOTONES DEBAJO DE LA BARRA DE CORNETA -->
-      <div class="corneta-btn-bar">
-        <button type="button" class="btn-action-main btn-play-corneta" onclick="playCornetaSeleccionadaMMT()">
-          <span>TOCAR CORNETA</span>
-        </button>
-        <button type="button" class="btn-action-main btn-add-corneta" onclick="addCornetaSeleccionadaAPlaylistMMT()">
-          <span>AÑADIR A LISTA</span>
         </button>
       </div>
     </div>
@@ -718,9 +706,7 @@
     // ==========================================
     const selectIds = [
       'selCatInstitucionales',
-      'selCatMarchas',
-      'selCatHimnos',
-      'selCatReligiosa'
+      'selCatMarchasHimnos'
     ];
 
     function onMusicaSelectChange(activeSelect, cat) {
